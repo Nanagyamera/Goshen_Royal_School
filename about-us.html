@@ -31,44 +31,35 @@
 
     <link rel="stylesheet" href="assets/css/bootstrap.css" />
     <link rel="stylesheet" href="assets/css/meanmenu.css" />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://www.littleangelsacademyschool.com/assets/css/animate.min.css"
-    />
-    <link
+    /> -->
+
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+
+    <!-- <link
       rel="stylesheet"
       href="https://www.littleangelsacademyschool.com/assets/css/swiper-bundle.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://www.littleangelsacademyschool.com/assets/css/slick.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://www.littleangelsacademyschool.com/assets/css/nouislider.css"
-    />
+    /> -->
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.css" />
+
+    <link rel="stylesheet" href="assets/css/slick.css" />
+    <link rel="stylesheet" href="assets/css/nouislider.css" />
     <!-- <link
       rel="stylesheet"
       href="https://www.littleangelsacademyschool.com/assets/css/backtotop.css"
     /> -->
     <link rel="stylesheet" href="assets/css/backtotop.css" />
-    <link
-      rel="stylesheet"
-      href="https://www.littleangelsacademyschool.com/assets/css/magnific-popup.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://www.littleangelsacademyschool.com/assets/css/nice-select.css"
-    />
-    <link
+    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/nice-select.css" />
+    <!-- <link
       rel="stylesheet"
       href="https://www.littleangelsacademyschool.com/assets/css/flaticon_kindedo.css"
-    />
+    /> -->
 
-    <link
-      rel="stylesheet"
-      href="https://www.littleangelsacademyschool.com/assets/css/spacing.css"
-    />
+    <link rel="stylesheet" href="assets/css/spacing.css" />
   </head>
 
   <body>
@@ -1335,135 +1326,24 @@
     <div class="bd-search-overlay"></div>
     <!-- serach popup area end here  -->
 
-    <!-- JS here -->
-    <script src="https://www.littleangelsacademyschool.com/assets/js/vendor/jquery.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/vendor/waypoints.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/bootstrap-bundle.js"></script>
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/waypoints.js"></script>
+    <script src="assets/js/bootstrap-bundle.js"></script>
     <script src="assets/js/meanmenu.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/swiper-bundle.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/slick.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/nouislider.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/magnific-popup.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/parallax.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/backtotop.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/nice-select.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/wow.min.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/gsap.min.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/isotope-pkgd.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/imagesloaded-pkgd.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/ajax-form.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/jquery.appear.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/jquery.odometer.min.js"></script>
-    <script src="https://www.littleangelsacademyschool.com/assets/js/main.js"></script>
-
-    <!-- APP JS -->
-    <script>
-      $("document").ready(function () {
-        // Login Form Start
-        $("#loginSpin").hide();
-        $("#loginForm").submit(function (event) {
-          event.preventDefault();
-
-          $.ajax({
-            type: "POST",
-            url: "https://www.littleangelsacademyschool.com/src/routes/route.php",
-            data: new FormData(this),
-            dataType: "json",
-            cache: false,
-            processData: false,
-            contentType: false,
-            beforeSend: function () {
-              $("#loginSpin").show();
-            },
-            success: function (data) {
-              console.log(data);
-              if (data.msg === "error") {
-                alert(`${data.data}`);
-              } else if (data.msg === "authenticated") {
-                alert(`${data.data}`);
-                window.open(
-                  "https://www.littleangelsacademyschool.com/admin/",
-                  "_blank",
-                  "width=1200px,height=600px,top=200px,left=400px"
-                );
-              }
-            },
-            complete: function () {
-              $("#loginSpin").hide();
-            },
-          });
-        });
-        // Login Form End
-
-        // Contact Form Submit
-        $("#contactSpin").hide();
-        $("#contactForm").submit(function (event) {
-          event.preventDefault();
-
-          $.ajax({
-            type: "POST",
-            url: "https://www.littleangelsacademyschool.com/src/routes/route.php",
-            data: new FormData(this),
-            dataType: "json",
-            cache: false,
-            processData: false,
-            contentType: false,
-            beforeSend: function () {
-              $("#contactSpin").show();
-              $("#contactButton").html("Please wait...");
-            },
-            success: function (data) {
-              console.log(data);
-              if (data.msg == "success") {
-                alert(`${data.data}`);
-                window.location.href =
-                  "https://www.littleangelsacademyschool.com/thanks-for-your-enquiry/";
-              } else if (data.msg == "error") {
-                alert(`${data.data}`);
-                window.location.href =
-                  "https://www.littleangelsacademyschool.com/contact-us/";
-              }
-            },
-            complete: function () {
-              $("#contactSpin").hide();
-              $("#contactButton").html("Send Your Enquiry");
-            },
-          });
-        });
-        // Contact Form Submit Ends
-
-        // Admission Form
-        $("#admissionReserveSpin").hide();
-        $("#admissionReserveForm").submit(function (event) {
-          event.preventDefault();
-
-          $.ajax({
-            type: "POST",
-            url: "https://www.littleangelsacademyschool.com/src/routes/route.php",
-            data: new FormData(this),
-            dataType: "json",
-            cache: false,
-            processData: false,
-            contentType: false,
-            beforeSend: function () {
-              $("#admissionReserveSpin").show();
-            },
-            success: function (data) {
-              console.log(data);
-              if (data.msg === "error") {
-                alert(`${data.data}`);
-              } else if (data.msg === "success") {
-                alert(`${data.data}`);
-                window.location.href = "index.html";
-              }
-            },
-            complete: function () {
-              $("#admissionReserveSpin").hide();
-            },
-          });
-        });
-        // Admission Form
-      });
-    </script>
+    <script src="assets/js/swiper-bundle.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/nouislider.js"></script>
+    <script src="assets/js/magnific-popup.js"></script>
+    <script src="assets/js/parallax.js"></script>
+    <script src="assets/js/backtotop.js"></script>
+    <script src="assets/js/nice-select.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- <script src="https://www.littleangelsacademyschool.com/assets/js/isotope-pkgd.js"></script> -->
+    <script src="assets/js/imagesloaded-pkgd.js"></script>
+    <!-- <script src="https://www.littleangelsacademyschool.com/assets/js/ajax-form.js"></script> -->
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/jquery.odometer.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
